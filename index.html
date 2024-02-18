@@ -14,7 +14,7 @@
     <!-- tailwind and daisy UI -->
   </head>
   <body>
-    <section class="max-w-[1200px] mx-auto">
+    <section class="sm:px-4 lg:max-w-[1200px] mx-auto">
       <!-- navbar -->
       <div class="navbar bg-base-100">
         <div class="navbar-start">
@@ -69,9 +69,9 @@
       </div>
       <!-- hero section -->
       <div class="relative">
-        <div class="bg-[url('/images/banner.png')] bg-no-repeat bg-cover bg-center mt-7 rounded-3xl">
-            <div class="text-center pt-28 pb-32">
-              <h1 class="text-white text-6xl font-bold">
+        <div class="bg-[url('/images/banner.png')] bg-no-repeat  lg:bg-cover lg:bg-center mt-7 rounded-3xl">
+            <div class="text-center pt-14 lg:pt-28 pb-28 lg:pb-32">
+              <h1 class="text-white text-3xl lg:text-6xl font-bold">
                 End-to-End Travel with <br />
                 <span class="text-[#1DD100]">vix paribahan</span>
               </h1>
@@ -80,7 +80,7 @@
                 app. The <br />
                 integrated testing features allow for a streamlined .
               </p>
-              <button class="btn bg-[#1DD100] text-black text-xl">
+              <button onclick="window.location.href='#ticketSection'" class="btn bg-[#1DD100] text-black text-xl">
                 Buy Tickets
               </button>
             </div>
@@ -167,7 +167,7 @@
       </div>
     </section>
     <!-- ticket buy -->
-    <section class="mt-28 pb-28 bg-[#F7F8F8] rounded-t-[100px]">
+    <section id="ticketSection" class="mt-28 pb-28 bg-[#F7F8F8] rounded-t-[100px]">
       <!-- section-1 -->
       <div class="mx-auto max-w-[1200px] pt-28">
         <h1 class="text-4xl font-semibold text-center">Vix Paribahan</h1>
@@ -190,7 +190,7 @@
               <div>
                 <button class="btn text-[#1DD100] text-xl bg-[#1DD10066]">
                   <img src="./images/seat-green.png" alt="" />
-                  <span>40</span>
+                  <span id="total_seat">40</span>
                   Seats left
                 </button>
               </div>
@@ -261,65 +261,65 @@
               </div>
               <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-1 grid gap-5">
-                  <button class="btn bg-transparent border-none text-[#03071280]">A</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">B</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">C</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">D</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">E</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">F</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">G</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">H</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">I</button>
-                  <button class="btn bg-transparent border-none text-[#03071280]">J</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">A</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">B</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">C</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">D</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">E</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">F</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">G</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">H</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">I</button>
+                  <button  class="px-3 h-12 min-h-12 bg-transparent border-none text-[#03071280]">J</button>
                 </div>
                   <div class="col-span-2 grid gap-5"">
-                    <button class="btn block w-[110px]  text-[#03071280]">A1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">B1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">C1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">D1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">E1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">F1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">G1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">H1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">I1</button>
-                    <button class="btn block w-[110px] text-[#03071280]">J1</button>
+                    <button id="A1" class="seat_btn btn block w-[110px] text-[#03071280]">A1</button>
+                    <button id="B1" class="seat_btn btn block w-[110px] text-[#03071280]">B1</button>
+                    <button id="C1" class="seat_btn btn block w-[110px] text-[#03071280]">C1</button>
+                    <button id="D1" class="seat_btn btn block w-[110px] text-[#03071280]">D1</button>
+                    <button id="E1" class="seat_btn btn block w-[110px] text-[#03071280]">E1</button>
+                    <button id="F1" class="seat_btn btn block w-[110px] text-[#03071280]">F1</button>
+                    <button id="G1" class="seat_btn btn block w-[110px] text-[#03071280]">G1</button>
+                    <button id="H1" class="seat_btn btn block w-[110px] text-[#03071280]">H1</button>
+                    <button id="I1" class="seat_btn btn block w-[110px] text-[#03071280]">I1</button>
+                    <button id="J1" class="seat_btn btn block w-[110px] text-[#03071280]">J1</button>
                   </div>
                   <div class="col-span-2 grid gap-5"">
-                    <button class="btn block w-[110px] text-[#03071280]">A2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">B2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">C2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">D2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">E2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">F2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">G2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">H2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">I2</button>
-                    <button class="btn block w-[110px] text-[#03071280]">J2</button>
+                    <button id="A2" class="seat_btn btn block w-[110px] text-[#03071280]">A2</button>
+                    <button id="B2" class="seat_btn btn block w-[110px] text-[#03071280]">B2</button>
+                    <button id="C2" class="seat_btn btn block w-[110px] text-[#03071280]">C2</button>
+                    <button id="D2" class="seat_btn btn block w-[110px] text-[#03071280]">D2</button>
+                    <button id="E2" class="seat_btn btn block w-[110px] text-[#03071280]">E2</button>
+                    <button id="F2" class="seat_btn btn block w-[110px] text-[#03071280]">F2</button>
+                    <button id="G2" class="seat_btn btn block w-[110px] text-[#03071280]">G2</button>
+                    <button id="H2" class="seat_btn btn block w-[110px] text-[#03071280]">H2</button>
+                    <button id="I2" class="seat_btn btn block w-[110px] text-[#03071280]">I2</button>
+                    <button id="J2" class="seat_btn btn block w-[110px] text-[#03071280]">J2</button>
                   </div>
                   <div class="col-span-3"></div>
                   <div class="col-span-2 grid gap-5"">
-                    <button class="btn block w-[110px] text-[#03071280]">A3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">B3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">C3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">D3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">E3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">F3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">G3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">H3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">I3</button>
-                    <button class="btn block w-[110px] text-[#03071280]">J3</button>
+                    <button id="A3" class="seat_btn btn block w-[110px] text-[#03071280]">A3</button>
+                    <button id="B3" class="seat_btn btn block w-[110px] text-[#03071280]">B3</button>
+                    <button id="C3" class="seat_btn btn block w-[110px] text-[#03071280]">C3</button>
+                    <button id="D3" class="seat_btn btn block w-[110px] text-[#03071280]">D3</button>
+                    <button id="E3" class="seat_btn btn block w-[110px] text-[#03071280]">E3</button>
+                    <button id="F3" class="seat_btn btn block w-[110px] text-[#03071280]">F3</button>
+                    <button id="G3" class="seat_btn btn block w-[110px] text-[#03071280]">G3</button>
+                    <button id="H3" class="seat_btn btn block w-[110px] text-[#03071280]">H3</button>
+                    <button id="I3" class="seat_btn btn block w-[110px] text-[#03071280]">I3</button>
+                    <button id="J3" class="seat_btn btn block w-[110px] text-[#03071280]">J3</button>
                   </div>
                   <div class="col-span-2 grid gap-5"">
-                    <button class="btn block w-[110px] text-[#03071280]">A4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">B4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">C4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">D4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">E4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">F4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">G4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">H4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">I4</button>
-                    <button class="btn block w-[110px] text-[#03071280]">J4</button>
+                    <button id="A4" class="seat_btn btn block w-[110px] text-[#03071280]">A4</button>
+                    <button id="B4" class="seat_btn btn block w-[110px] text-[#03071280]">B4</button>
+                    <button id="C4" class="seat_btn btn block w-[110px] text-[#03071280]">C4</button>
+                    <button id="D4" class="seat_btn btn block w-[110px] text-[#03071280]">D4</button>
+                    <button id="E4" class="seat_btn btn block w-[110px] text-[#03071280]">E4</button>
+                    <button id="F4" class="seat_btn btn block w-[110px] text-[#03071280]">F4</button>
+                    <button id="G4" class="seat_btn btn block w-[110px] text-[#03071280]">G4</button>
+                    <button id="H4" class="seat_btn btn block w-[110px] text-[#03071280]">H4</button>
+                    <button id="I4" class="seat_btn btn block w-[110px] text-[#03071280]">I4</button>
+                    <button id="J4" class="seat_btn btn block w-[110px] text-[#03071280]">J4</button>
                   </div>
                 </div>
                 
@@ -331,20 +331,17 @@
                   <div class="border-b-2 border-dashed my-6"></div>
                   <div class="bg-[#F7F8F8] p-8 mt-6 rounded-xl">
                     <div class="flex justify-between">
-                      <p class="text-[#030712] font-semibold">Seat <span>0</span> </p>
-                      <p class="text-[#030712] font-semibold">Route</p>
-                      <p class="text-[#030712] font-semibold">Route</p>
+                      <p class="text-[#030712] font-semibold">Seat <span id="seat_counter">0</span> </p>
+                      <p class="text-[#030712] font-semibold">Class</p>
+                      <p class="text-[#030712] font-semibold">Price</p>
                     </div>
                     <div class="border-b-2 border-dashed my-6"></div>
-                    <div class="flex justify-between">
-                      <p id="" class="text-[#03071299]">C2</p>
-                      <p class="text-[#03071299]">Economoy</p>
-                      <p class="text-[#03071299]">550</p>
+                    <div id="select_seat">
                     </div>
                     <div class="border-b-2 border-dashed mt-6 my-2"></div>
                     <div class="flex justify-between">
                         <p class="text-[#03071299]">Total Price</p>
-                        <p class="text-[#03071299]">BDT <span>550</span></p>
+                        <p class="text-[#03071299]">BDT <span id="ticket_price">0</span></p>
                       </div>
                       <div class="inline-flex mt-4">
                         <input type="text" placeholder="Have any copupon?" class="p-4 min-w-[280px] rounded-lg focus:outline-none">
