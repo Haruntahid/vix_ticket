@@ -1,28 +1,30 @@
 const seatBtns = document.querySelectorAll(".seat_btn");
 let seatCount = 0;
 let updateTicketPrice = 0;
+let grandTotal = document.getElementById("grand_total");
+let seatName = document.getElementById("select_seat");
+const nextBtn = document.getElementById("next_btn");
 
 for (let seatBtn of seatBtns) {
   seatBtn.addEventListener("click", function (event) {
+    seatCount += 1;
+    if (seatName.children.length >= 4) {
+      alert("You can't buy more than 4 tickets");
+      return;
+    }
+
     const clickBtn = event.target.id;
     event.target.style.backgroundColor = "#1DD100";
-    event.target.style.color = "#000";
+    event.target.style.color = "#fff";
     event.target.setAttribute("disabled", "true");
     const avilableSeat = getInnerTextById("total_seat");
     const remainingSeat = avilableSeat - 1;
     document.getElementById("total_seat").innerText = remainingSeat;
-    seatCount += 1;
-    if (seatCount > 4) {
-      alert("You can't buy more than 4 tickets");
-      // event.target.classList.remove = "backgroundColor";
-      return;
-    }
 
     // seat counter
     document.getElementById("seat_counter").innerText = seatCount;
 
     // creat seats name price and class
-    const seatName = document.getElementById("select_seat");
     const addSeat = document.createElement("li");
     const addClass = document.createElement("li");
     const addPrice = document.createElement("li");
@@ -39,8 +41,16 @@ for (let seatBtn of seatBtns) {
 
     // update ticket price
     const ticket = document.getElementById("ticket_price");
-    let updateTicketPrice = seatCount * 550;
+    let updateTicketPrice = seatName.children.length * 550;
+    grandTotal.innerText = seatName.children.length * 550;
     ticket.innerText = updateTicketPrice;
+
+    // purchase ticket from validation
+    const userPhone = document.getElementById("user_name").value;
+    console.log(userPhone);
+    if (seatName.children.length > 0 || userPhone === "") {
+      nextBtn.removeAttribute("disabled", "true");
+    }
   });
 }
 
@@ -50,8 +60,6 @@ function getInnerTextById(id) {
 }
 
 //Apply Cupon check
-let grandTotal = document.getElementById("grand_total");
-// console.log(grandTotal);
 const cuponBox = document.getElementById("cuponBox");
 const discountHolder = document.getElementById("discount");
 const ulCreate = document.createElement("ul");
@@ -70,19 +78,20 @@ const cuponBtn = document
     const cupon = document.getElementById("cupon_input");
     const cuponValue = cupon.value;
     let cuponText = cuponValue.toLowerCase();
-    if (seatCount !== 4) {
+    if (seatName.children.length < 4) {
       alert("You must buy 4 ticket to apply promo code");
     } else if (cuponText == "new15") {
-      updateTicketPrice = seatCount * 550 * 0.15;
+      updateTicketPrice = seatName.children.length * 550 * 0.15;
       li1.innerText = "Discount";
       li2.innerText = updateTicketPrice;
       cuponBox.classList.add("hidden");
-      grandTotal.innerText = seatCount * 550 - updateTicketPrice;
+      grandTotal.innerText = seatName.children.length * 550 - updateTicketPrice;
       console.log(grandTotal);
-    } else if (cuponText == "couple20") {
-      updateTicketPrice = seatCount * 550 * 0.2;
+    } else if (cuponText == "couple 20") {
+      updateTicketPrice = seatName.children.length * 550 * 0.2;
       li1.innerText = "Discount";
-      li2.innerText = updateTicketPrice;
+      li2.innerText = "BDT " + updateTicketPrice;
       cuponBox.classList.add("hidden");
+      grandTotal.innerText = seatName.children.length * 550 - updateTicketPrice;
     } else alert("invalid promo code");
   });
