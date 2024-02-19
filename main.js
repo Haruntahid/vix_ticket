@@ -46,7 +46,7 @@ for (let seatBtn of seatBtns) {
     ticket.innerText = updateTicketPrice;
 
     // purchase ticket from validation
-    const userPhone = document.getElementById("phone").value;
+    // const userPhone = document.getElementById("phone").value;
     if (seatName.children.length > 0) {
       nextBtn.removeAttribute("disabled", "true");
     }
@@ -94,3 +94,13 @@ const cuponBtn = document
       grandTotal.innerText = seatName.children.length * 550 - updateTicketPrice;
     } else alert("invalid promo code");
   });
+
+nextBtn.addEventListener("click", function (e) {
+  const userPhone = document.getElementById("phone").value;
+  if (!userPhone) {
+    alert("Fill up all");
+    return;
+  } else {
+    my_modal_4.showModal();
+  }
+});
