@@ -98,7 +98,7 @@ const cuponBtn = document
 nextBtn.addEventListener("click", function (e) {
   const userPhone = document.getElementById("phone").value;
   if (!userPhone) {
-    alert("Fill up all");
+    alert("Complete The field");
     return;
   } else {
     my_modal_4.showModal();
