@@ -46,9 +46,8 @@ for (let seatBtn of seatBtns) {
     ticket.innerText = updateTicketPrice;
 
     // purchase ticket from validation
-    const userPhone = document.getElementById("user_name").value;
-    console.log(userPhone);
-    if (seatName.children.length > 0 || userPhone === "") {
+    const userPhone = document.getElementById("phone").value;
+    if (seatName.children.length > 0) {
       nextBtn.removeAttribute("disabled", "true");
     }
   });
